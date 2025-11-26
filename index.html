@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top End Panels</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* RESET */
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family:"Segoe UI",Arial,sans-serif;
+      background:#0b1d39;
+      color:#fff;
+      line-height:1.6;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:15px 50px; position:fixed; top:0; width:100%; z-index:100;
+      background:#0b1d39; box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    }
+    .logo { display:flex; align-items:center; gap:10px; }
+    .logo img { height:45px; }
+    .logo h1 { color:#ff7b00; font-size:1.5rem; font-weight:700; }
+    nav ul { display:flex; list-style:none; gap:25px; }
+    nav a {
+      color:#fff; text-decoration:none; font-weight:500;
+      transition:color .3s;
+    }
+    nav a:hover, nav a.active { color:#ff7b00; }
+    .btn-quote {
+      background:#ff7b00; color:#fff; padding:10px 20px; border-radius:25px;
+      text-decoration:none; transition:background .3s;
+    }
+    .btn-quote:hover { background:#e56e00; }
+
+    /* HERO */
+    .hero {
+  background:url("assets/car.avif") center/cover no-repeat;
+  height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  padding:20px;
+  animation:heroFade 2s ease-out;
+  /* ADD THIS */
+  margin-top: -200px; /* pulls hero upward to center it better */
+}
+
+    .hero::before {
+      content:""; position:absolute; inset:0; background:rgba(11,29,57,0.7);
+    }
+    .hero-text {
+      position:relative; z-index:1;
+      opacity:0; transform:translateY(30px);
+      animation:fadeUp 1.5s ease-out forwards;
+      animation-delay:0.5s;
+    }
+    .hero h2 {
+      font-size:2.5rem; margin-bottom:10px;
+      opacity:0; transform:translateY(30px);
+      animation:fadeUp 1.2s ease-out forwards;
+    }
+    .hero p {
+      opacity:0; transform:translateY(30px);
+      animation:fadeUp 1.2s ease-out forwards;
+      animation-delay:0.3s;
+    }
+    .btn-main {
+      background:#ff7b00; color:#fff; padding:12px 25px;
+      border-radius:25px; text-decoration:none; margin-top:15px;
+      display:inline-block; transition:background .3s;
+      opacity:0; transform:translateY(30px);
+      animation:fadeUp 1.2s ease-out forwards;
+      animation-delay:0.6s;
+    }
+    .btn-main:hover { background:#e56e00; }
+
+    @keyframes fadeUp {
+      0% { opacity:0; transform:translateY(30px); }
+      100% { opacity:1; transform:translateY(0); }
+    }
+    @keyframes heroFade {
+      from { opacity:0; }
+      to { opacity:1; }
+    }
+
+    /* SERVICES */
+    .services {
+      background:#0f2a4b; padding:100px 50px; text-align:center;
+    }
+    .services h2 { font-size:2rem; margin-bottom:40px; }
+    .services span { color:#ff7b00; }
+    .service-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+    .service-card {
+      background:#142d56; border-radius:10px; overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      transition:all 0.3s ease;
+      padding-bottom:20px;
+    }
+    .service-card img { width:100%; height:200px; object-fit:cover; }
+    .service-card h3 { margin:15px 0; }
+    .btn-secondary {
+      display:inline-block; border:2px solid #ff7b00; color:#ff7b00;
+      padding:8px 20px; border-radius:25px; margin-bottom:10px;
+      text-decoration:none; transition:.3s;
+    }
+    .btn-secondary:hover { background:#ff7b00; color:#fff; }
+
+    /* Learn More text */
+    .service-description {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.5s ease;
+      margin: 0 20px;
+      text-align: left;
+      color: #ddd;
+      font-size: 0.95rem;
+    }
+    .service-card.active .service-description {
+      max-height: 200px;
+      opacity: 1;
+      margin-top: 10px;
+    }
+
+    /* REPAIR PROGRESS */
+    .repair-progress {
+      background: #0b1d39;
+      text-align: center;
+      padding: 100px 50px;
+    }
+    .repair-progress h2 { font-size: 2rem; margin-bottom: 10px; color: #fff; }
+    .repair-progress p { color: #ccc; margin-bottom: 50px; }
+    .progress-flow {
+      display: flex; justify-content: center; align-items: center;
+      flex-wrap: wrap; gap: 25px;
+    }
+    .progress-step {
+      background: #142d56; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      text-align: center; width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .progress-step:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+    .progress-step img { width: 100%; height: 200px; object-fit: cover; }
+    .progress-step h3 { margin: 15px 0; color: #ff7b00; font-weight: 600; }
+    .arrow {
+      font-size: 2.5rem; color: #ff7b00;
+      display: flex; align-items: center; justify-content: center;
+      animation: arrowPulse 1.5s infinite;
+    }
+    @keyframes arrowPulse {
+      0%, 100% { opacity: 0.6; transform: translateX(0); }
+      50% { opacity: 1; transform: translateX(5px); }
+    }
+    @media (max-width: 768px) {
+      .progress-flow { flex-direction: column; }
+      .arrow { transform: rotate(90deg); margin: 10px 0; }
+      @keyframes arrowPulse {
+        0%, 100% { opacity: 0.6; transform: translateY(0); }
+        50% { opacity: 1; transform: translateY(5px); }
+      }
+    }
+
+    /* SLIDER */
+    .slider-section { padding:100px 50px; text-align:center; background:#0b1d39; }
+    .slider { overflow:hidden; width:80%; margin:40px auto;
+      border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.4);
+    }
+    .slides { display:flex; width:300%; animation:slide 12s infinite; }
+    .slides img { width:100%; height:400px; object-fit:cover; }
+    @keyframes slide {
+      0%{transform:translateX(0);} 33%{transform:translateX(-100%);}
+      66%{transform:translateX(-200%);} 100%{transform:translateX(0);}
+    }
+
+    /* CONTACT */
+    .contact {
+      background:#0f2a4b; padding:100px 50px; text-align:center;
+    }
+    .contact h2 { font-size:2rem; margin-bottom:20px; }
+    .contact p { margin-bottom:30px; color:#ddd; }
+    .contact-form {
+      display:flex; flex-direction:column; max-width:600px; margin:0 auto;
+      gap:15px;
+    }
+    .contact-form input, .contact-form textarea {
+      padding:12px; border:none; border-radius:8px; resize:none;
+      font-size:1rem;
+    }
+    .contact-form button {
+      align-self:center; border:none; cursor:pointer;
+    }
+
+    /* Videos */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    iframe {
+      border-radius: 10px;
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+    }
+
+    /* FOOTER */
+    footer {
+      background:#08162c; text-align:center; padding:20px 0;
+      font-size:.9rem;
+    }
+
+    /* CHAT BUTTON */
+    .chat-button {
+      position:fixed; bottom:25px; right:25px;
+      background:#ff7b00; color:#fff; padding:12px 18px;
+      border-radius:30px; font-weight:600; cursor:pointer;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      transition:background .3s;
+    }
+    .chat-button:hover { background:#e56e00; }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/logoedit.svg" alt="Top End Panels Logo" />
+      <h1>Top End Panels</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <a href="about1.html">About</a>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <a href="quote.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="quote.html" class="btn-quote">Get a Quote</a>
+  </header>
+
+<!-- SMALLER, WORKING CONTINUOUS INSURANCE MARQUEE -->
+<section class="insurance-section">
+  <h2>Trusted by <span>Insurers</span></h2>
+
+  <div class="insurance-marquee" aria-hidden="false">
+    <div class="marquee">
+      <div class="marquee__inner" role="list">
+        <!-- original set (keep these or replace with your asset names) -->
+        <img src="assets/budgetdirect.svg" alt="Budget Direct" role="listitem"/>
+        <img src="assets/RACV.jpg" alt="RACV" role="listitem"/>
+        <img src="assets/youi.webp" alt="Youi" role="listitem"/>
+        <img src="assets/comminsure.png" alt="CommInsure" role="listitem"/>
+        <img src="assets/guild.png" alt="Guild Insurance" role="listitem"/>
+        <img src="assets/allianzlogo2.png" alt="Allianz" role="listitem"/>
+        <img src="assets/QBE.png" alt="QBE" role="listitem"/>
+        <img src="assets/realinsurance.png" alt="Real Insurance" role="listitem"/>
+        <!-- you may leave off manual duplicates — JS below ensures duplication if needed -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* SMALLER INSURANCE STREAMING MARQUEE - WORKING */
+.insurance-section {
+    background: #fff;
+    text-align: center;
+    padding: 50px 16px; /* reduced height */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    clip-path: ellipse(100% 85% at 50% 15%);
+}
+
+.insurance-section h2 {
+    font-size: 1.4rem; /* smaller heading */
+    margin-bottom: 22px;
+    color: #0b1d39;
+    font-weight: 600;
+}
+
+.insurance-section span { color: #ff7b00; }
+
+.insurance-marquee {
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee {
+    display: flex;
+    align-items: center;
+    will-change: transform;
+}
+
+.marquee__inner {
+    display: flex;
+    gap: 20px;        /* compact spacing */
+    flex-shrink: 0;
+    animation: marqueeAnim 300s linear infinite; /* MUCH SLOWER */
+}
+
+.marquee__inner img {
+    height: 42px;     /* smaller logos */
+    width: auto;
+    opacity: 0.95;
+    display: block;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* if aria-hidden duplicates used by JS, keep pointer-events off */
+.marquee__inner[aria-hidden="true"] { pointer-events: none; }
+
+/* Hover pause */
+.insurance-marquee:hover .marquee__inner {
+    animation-play-state: paused;
+}
+
+/* Animation: translate left by half since we duplicate content */
+@keyframes marqueeAnim {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Responsive scaling */
+@media (max-width: 900px) {
+    .marquee__inner { gap: 16px; }
+    .marquee__inner img { height: 36px; }
+    .marquee__inner { animation-duration: 140s; } /* slower tablet */
+}
+
+@media (max-width: 480px) {
+    .marquee__inner { gap: 12px; }
+    .marquee__inner img { height: 30px; }
+    .marquee__inner { animation-duration: 160s; } /* slower mobile */
+}
+</style>
+
+<script>
+(function ensureDuplicate() {
+  try {
+    const inner = document.querySelector('.marquee__inner');
+    if (!inner) return;
+    const container = inner.parentElement.parentElement;
+    const imgs = Array.from(inner.children).filter(n => n.tagName === 'IMG');
+    if (imgs.length === 0) return;
+    const srcs = imgs.map(i => i.getAttribute('src'));
+    const hasDuplicate = srcs.some((s, idx) => srcs.indexOf(s) !== idx);
+    if (!hasDuplicate) {
+      imgs.forEach(img => inner.appendChild(img.cloneNode(true)));
+      inner.setAttribute('aria-hidden', 'true');
+    }
+  } catch (e) {
+    console.warn('Marquee duplication fallback failed:', e);
+  }
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h2>Precision Repairs. Premium Results.</h2>
+      <p>Your trusted collision and car repair specialists in Melbourne.</p>
+      <a href="quote.html" class="btn-main">Get Your Quote</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <h2>Our <span>Services</span></h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <img src="assets/damaged.png" alt="Accident Repair" />
+        <h3>Accident Repair</h3>
+        <a href="#" class="btn-secondary learn-more">Learn More</a>
+        <div class="service-description">
+          <p>Our accident repair service covers everything from minor collisions to major structural damage. We restore your car’s integrity and finish with factory-level precision.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="assets/panelbeating.webp" alt="Car Panel Beating" />
+        <h3>Panel Beating</h3>
+        <a href="#" class="btn-secondary learn-more">Learn More</a>
+        <div class="service-description">
+          <p>Our expert panel beaters use advanced techniques to repair panels, align frames, and bring your car back to its original shape safely and accurately.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="assets/dent.png" alt="Scratch & Dent Repair" />
+        <h3>Scratch & Dent Repair</h3>
+        <a href="#" class="btn-secondary learn-more">Learn More</a>
+        <div class="service-description">
+          <p>We specialize in precision scratch and dent repairs using paint-matching technology to make your car’s surface look as good as new.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPAIR PROGRESS -->
+  <section class="repair-progress">
+    <h2>Repair Progress</h2>
+    <p>Follow the transformation from damaged to fully restored.</p>
+    <div class="progress-flow">
+      <div class="progress-step">
+        <img src="assets/damaged.png" alt="Damaged Car" />
+        <h3>Damaged</h3>
+      </div>
+      <div class="arrow">➡️</div>
+      <div class="progress-step">
+        <img src="assets/midrepair.png" alt="Mid Repair" />
+        <h3>Mid Repair</h3>
+      </div>
+      <div class="arrow">➡️</div>
+      <div class="progress-step">
+        <img src="assets/repaired.png" alt="Repaired Car" />
+        <h3>Repaired</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDER -->
+  <section class="slider-section" id="gallery">
+    <h2>Before / During / After Repairs</h2>
+    <div class="slider">
+      <div class="slides">
+        <img src="assets/damaged.png" alt="Before Repair" />
+        <img src="assets/midrepair.png" alt="Mid Repair" />
+        <img src="assets/repaired.png" alt="After Repair" />
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE PARTNERS (STREAMING LOGOS) -->
+  <section class="insurance-section">
+     <link rel="stylesheet" href="style.css"/>
+    <h2>Trusted by Major <span>Insurance Partners</span></h2>
+  
+    <div class="insurance-marquee">
+      <div class="marquee">
+        <!-- first set of logos -->
+        <div class="marquee__inner">
+          <img src="assets/budgetdirect.svg" alt="Budget Direct" />
+          <img src="assets/RACV.jpg" alt="RACV" />
+          <img src="assets/youi.webp" alt="Youi" />
+          <img src="assets/comminsure.png" alt="CommInsure" />
+          <img src="assets/guild.png" alt="Guild Insurance" />
+          <img src="assets/allianzlogo2.png" alt="Allianz" />
+          <img src="assets/QBE.png" alt="QBE" />
+          <img src="assets/realinsurance.png" alt="Real Insurance" />
+          <div class="marquee-spacer"></div> <!-- Add this -->
+        </div>
+  
+        <!-- duplicate set for seamless loop -->
+        <div class="marquee__inner" aria-hidden="true">
+          <img src="assets/budgetdirect.svg" alt="Budget Direct" />
+          <img src="assets/racv.png" alt="RACV" />
+          <img src="assets/youi.webp" alt="Youi" />
+          <img src="assets/comminsure.png" alt="CommInsure" />
+          <img src="assets/guild.png" alt="Guild Insurance" />
+          <img src="assets/allianzlogo2.png" alt="Allianz" />
+          <img src="assets/QBE.png" alt="QBE" />
+          <img src="assets/realinsurance.png" alt="Real Insurance" />
+          <div class="marquee-spacer"></div> <!-- Add this -->
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+<!-- Before/After Slider -->
+<!-- Before/After Slider -->
+<section class="slider-section">
+  <h2 class="slider-header">Quality Assured</h2>
+  <p class="slider-subtitle">From Damaged to Polished Guarantee</p>
+
+  <div class="slider-row">
+    <!-- First slider -->
+    <div class="before-after-slider">
+      <img src="assets/damagedhyu.jpg" class="bottom" alt="Repaired Car 1">
+      <img src="assets/fixedhyundai.jpg" class="top" alt="Damaged Car 1">
+      <div class="divider"></div>
+    </div>
+
+    <!-- Second slider -->
+    <div class="before-after-slider">
+      <img src="assets new photos/Lakeishabroke.jpg" class="bottom" alt="Repaired Car 2">
+      <img src="assets new photos/lakeaisha2.jpg" class="top" alt="Damaged Car 2">
+      <div class="divider"></div>
+    </div>
+  </div>
+
+  <div class="slider-row">
+    <!-- Third slider -->
+    <div class="before-after-slider">
+      <img src="assets new photos/car3broke.png" class="bottom" alt="Repaired Car 3">
+      <img src="assets new photos/car3repair.jpg" class="top" alt="Damaged Car 3">
+      <div class="divider"></div>
+    </div>
+
+    <!-- Fourth slider -->
+    <div class="before-after-slider">
+      <img src="assets/damagedcar4.jpg" class="bottom" alt="Repaired Car 4">
+      <img src="assets/fixedcar4.jpg" class="top" alt="Damaged Car 4">
+      <div class="divider"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Header & Subtitle styling */
+.slider-header {
+  font-size: 2rem;
+  color: #ff7b00;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.slider-subtitle {
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Row layout */
+.slider-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* space between sliders */
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+/* Slider styling */
+.before-after-slider {
+  position: relative;
+  width: 480px;  /* bigger width */
+  height: 360px; /* bigger height */
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: none;
+}
+
+.before-after-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.before-after-slider .top {
+  clip-path: inset(0 50% 0 0);
+}
+
+.before-after-slider .divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px; /* thicker divider */
+  height: 100%;
+  background: rgba(255,123,0,0.8);
+  cursor: ew-resize;
+  z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .before-after-slider {
+    width: 90%;
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .before-after-slider {
+    width: 90%;
+    height: 280px;
+  }
+}
+</style>
+
+<script>
+const sliders = document.querySelectorAll('.before-after-slider');
+
+sliders.forEach(slider => {
+  const topImage = slider.querySelector('.top');
+  const divider = slider.querySelector('.divider');
+  let isDragging = false;
+
+  function startDrag(e) { isDragging = true; dragMove(e); }
+  function stopDrag() { isDragging = false; }
+  function dragMove(e) {
+    if (!isDragging) return;
+    let clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+    const rect = slider.getBoundingClientRect();
+    let offset = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    let percent = (offset / rect.width) * 100;
+    topImage.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+    divider.style.left = percent + '%';
+  }
+
+  slider.addEventListener('mousedown', startDrag);
+  slider.addEventListener('touchstart', startDrag);
+  window.addEventListener('mousemove', dragMove);
+  window.addEventListener('touchmove', dragMove);
+  window.addEventListener('mouseup', stopDrag);
+  window.addEventListener('touchend', stopDrag);
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Let us know the details of your repair or request a service quote below.</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="text" placeholder="Subject" />
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit" class="btn-main">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Videos -->
+  <section id="videos" class="container">
+    <h2>Watch Us in Action</h2>
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/YAFUyPp_238" title="Video 1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/-Pkj1qIcK2Y" title="Video 2" allowfullscreen></iframe>
+    </div>
+  </section>
+
+    <!-- GOOGLE REVIEWS SECTION -->
+<!-- GOOGLE REVIEWS SECTION -->
+<section class="reviews" id="reviews">
+  <link rel="stylesheet" href="style.css" />
+  <h2>What Our Customers Say</h2>
+  <p>Real feedback from our valued customers.</p>
+
+  <div class="google-reviews">
+    <!-- Review 1 -->
+    <a href="https://share.google/pCCcCnLFzp1kTitX1" target="_blank" class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"The team at Top End Panels are truly amazing. From handling insurance to providing a courtesy car, they took care of everything. The quality of work was flawless—I almost didn’t recognise my car when it was ready. Highly recommend!"</p>
+      <p class="reviewer">– Jessica Tan</p>
+    </a>
+
+    <!-- Review 2 -->
+    <a href="https://share.google/PeQqO7jBZKmcCekXG" target="_blank" class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Can’t recommend the team enough! This is my second time coming to Top End Panels and the work has been amazing. They even helped me deal with my insurance and got my car looking brand new again. True professionals!"</p>
+      <p class="reviewer">– Lakeisha Jong</p>
+    </a>
+
+    <!-- Review 3 -->
+    <a href="https://share.google/V7F8l9sPF6hj5EdsN" target="_blank" class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"One of the best body panel shops in Sunshine. I’m very satisfied with their quality and experience. Jaden is knowledgeable and helped me through the whole claim process."</p>
+      <p class="reviewer">– Ye Minko</p>
+    </a>
+
+
+  <a 
+    href="https://www.google.com/maps/place/Top+End+Panels/@-37.796643,144.8317801,17z/data=!4m8!3m7!1s0x6ad66086019eff9f:0xfcfaafa00cbd7214!8m2!3d-37.796643!4d144.834355!9m1!1b1!16s%2Fg%2F1tfh4t3n?hl=en-AU&entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D" 
+    target="_blank" 
+    class="btn-main">
+    View All Google Reviews
+  </a>
+</section>
+
+
+ <footer>
+    <p>&copy; 2025 Top End Panels | All Rights Reserved</p>
+   <link rel="stylesheet" href="style.css"/>
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank" class="social-icon" aria-label="Facebook">
+        <!-- Facebook SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="30" height="30">
+          <path d="M22.675 0h-21.35C.596 0 0 .592 0 1.326v21.348C0 23.407.596 24 1.325 24H12.82v-9.294H9.692V11.07h3.128V8.414c0-3.1 1.893-4.788 4.657-4.788 1.325 0 2.464.098 2.795.142v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.764v2.31h3.587l-.467 3.636h-3.12V24h6.116c.73 0 1.324-.593 1.324-1.326V1.326C24 .592 23.404 0 22.675 0z"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/topendpanels/" target="_blank" class="social-icon" aria-label="Instagram">
+        <!-- Instagram SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="30" height="30">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.055 1.97.24 2.427.403a4.92 4.92 0 011.753 1.02 4.92 4.92 0 011.02 1.753c.164.457.348 1.257.403 2.427.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.055 1.17-.24 1.97-.403 2.427a4.902 4.902 0 01-1.02 1.753 4.902 4.902 0 01-1.753 1.02c-.457.164-1.257.348-2.427.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.055-1.97-.24-2.427-.403a4.902 4.902 0 01-1.753-1.02 4.902 4.902 0 01-1.02-1.753c-.164-.457-.348-1.257-.403-2.427C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.055-1.17.24-1.97.403-2.427a4.92 4.92 0 011.02-1.753 4.92 4.92 0 011.753-1.02c.457-.164 1.257-.348 2.427-.403C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.736 0 8.332.014 7.052.072 5.78.13 4.69.308 3.74.636a6.873 6.873 0 00-2.52 1.637A6.873 6.873 0 00.636 4.74c-.328.95-.506 2.04-.564 3.312C.014 8.332 0 8.736 0 12c0 3.264.014 3.668.072 4.948.058 1.272.236 2.362.564 3.312a6.873 6.873 0 001.637 2.52 6.873 6.873 0 002.52 1.637c.95.328 2.04.506 3.312.564 1.28.058 1.684.072 4.948.072s3.668-.014 4.948-.072c1.272-.058 2.362-.236 3.312-.564a6.873 6.873 0 002.52-1.637 6.873 6.873 0 001.637-2.52c.328-.95.506-2.04.564-3.312.058-1.28.072-1.684.072-4.948s-.014-3.668-.072-4.948c-.058-1.272-.236-2.362-.564-3.312a6.873 6.873 0 00-1.637-2.52 6.873 6.873 0 00-2.52-1.637c-.95-.328-2.04-.506-3.312-.564C15.668.014 15.264 0 12 0z"/>
+          <path d="M12 5.838a6.162 6.162 0 106.162 6.162A6.162 6.162 0 0012 5.838zm0 10.162a4 4 0 114-4 4 4 0 01-4 4z"/>
+          <circle cx="18.406" cy="5.594" r="1.44"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- FLOATING CHAT BUTTON -->
+  <div class="chat-button">
+    💬 Chat with Us
+  </div>
+
+  <script>
+    document.querySelectorAll('.learn-more').forEach(button => {
+      button.addEventListener('click', e => {
+        e.preventDefault();
+        const card = button.closest('.service-card');
+        card.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

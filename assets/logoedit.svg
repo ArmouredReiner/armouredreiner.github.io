@@ -1,0 +1,4 @@
+<svg width="150" height="50" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 35 Q40 5, 90 20 Q130 30, 140 35" stroke="#ff7b00" stroke-width="3" fill="none"></path>
+  <text x="20" y="45" font-family="Arial" font-size="16" fill="#ff7b00" font-weight="bold">Top End Panels</text>
+</svg>
