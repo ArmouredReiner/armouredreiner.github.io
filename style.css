@@ -649,3 +649,25 @@ footer {
   font-weight: 600;
   margin-top: 10px;
 }
+
+
+
+.repair-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 8px; /* spacing above subtitle */
+}
+
+.repair-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 4px; /* tight, clean spacing to the new line */
+}
+
+.repair-extra {
+  text-align: center;
+  font-size: 1.1rem;
+  color: orange;
+  margin-bottom: 20px; /* spacing before the sliders */
+}
+
