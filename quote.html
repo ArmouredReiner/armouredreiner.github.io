@@ -5,6 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Get a Quote | Top End Panels</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .icon-circle {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff7b00, #e56e00);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      box-shadow: 0 6px 20px rgba(255, 123, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .icon-circle svg {
+      width: 32px;
+      height: 32px;
+      color: #fff;
+      stroke-width: 2;
+    }
+
+    .contact-card:hover .icon-circle {
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 10px 30px rgba(255, 123, 0, 0.5);
+    }
+
+    .contact-card {
+      background: #142d56;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+    }
+
+    .contact-card h3 {
+      color: #ff7b00;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .contact-card p {
+      color: #ddd;
+      font-size: 0.95rem;
+    }
+
+    .contact-card a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-card a:hover {
+      color: #ff7b00;
+    }
+  </style>
 </head>
 <body>
 
@@ -36,19 +97,33 @@
 
       <div class="contact-details">
         <div class="contact-card">
-          <img src="assets/email.jpg" alt="Email Icon" class="icon" />
+          <div class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M22 6L12 13 2 6"/>
+            </svg>
+          </div>
           <h3>Email</h3>
           <p><a href="mailto:Topendpanels@optusnet.com.au">Topendpanels@optusnet.com.au</a></p>
         </div>
 
         <div class="contact-card">
-          <img src="assets/phone.jpg" alt="Phone Icon" class="icon" />
+          <div class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
           <h3>Phone</h3>
           <p><a href="tel:0432200571">0432 200 571</a></p>
         </div>
 
         <div class="contact-card">
-          <img src="assets/loc.png" alt="Location Icon" class="icon" />
+          <div class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
           <h3>Location</h3>
           <p>45 Wright Street, Sunshine, Victoria</p>
         </div>
