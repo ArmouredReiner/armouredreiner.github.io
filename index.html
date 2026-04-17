@@ -808,9 +808,26 @@ sliders.forEach(slider => {
     color: #fff;
     text-decoration: none;
     border-radius: 24px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
   }
   .reviews-panel a.review-card:hover {
     color: #fff;
+    border-color: #ff7b00;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 123, 0, 0.3), 0 0 0 1px rgba(255, 123, 0, 0.1);
+  }
+  .reviews-panel a.review-card::after {
+    content: "Click to read full review →";
+    display: block;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: #ff7b00;
+    font-weight: 500;
   }
   .google-review-badge {
     display: flex;
@@ -819,6 +836,11 @@ sliders.forEach(slider => {
     margin-bottom: 10px;
     font-size: 0.85rem;
     color: #9aa0a6;
+  }
+  .reviews-panel .btn-main {
+    margin-top: 25px;
+    padding: 15px 40px;
+    font-size: 1rem;
   }
   @media (max-width: 900px) {
     .location-reviews {
