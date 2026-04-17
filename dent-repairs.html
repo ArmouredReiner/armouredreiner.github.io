@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dent Repairs | Top End Panels</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .service-hero {
+      background: linear-gradient(135deg, #0b1d39 0%, #142d56 100%);
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+      position: relative;
+    }
+    .service-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("assets/car.avif") center/cover no-repeat;
+      opacity: 0.15;
+    }
+    .service-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .service-hero h1 {
+      font-size: 3rem;
+      color: #ff7b00;
+      margin-bottom: 20px;
+    }
+    .service-hero p {
+      font-size: 1.3rem;
+      color: #ccc;
+      line-height: 1.8;
+    }
+    .service-content {
+      background: #0f2a4b;
+      padding: 80px 50px;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-feature {
+      background: #142d56;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+    }
+    .service-feature h3 {
+      color: #ff7b00;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+    .service-feature p {
+      color: #ddd;
+      line-height: 1.7;
+    }
+    .pdr-section {
+      background: #0b1d39;
+      padding: 80px 50px;
+    }
+    .pdr-section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #ff7b00;
+      margin-bottom: 50px;
+    }
+    .pdr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .pdr-item {
+      background: #142d56;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+    }
+    .pdr-item h4 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .pdr-item p {
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+    .comparison-section {
+      background: #0f2a4b;
+      padding: 80px 50px;
+    }
+    .comparison-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #ff7b00;
+      margin-bottom: 40px;
+    }
+    .comparison-table {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #142d56;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .comparison-row {
+      display: flex;
+      padding: 20px 30px;
+      border-bottom: 1px solid #1e4a7a;
+    }
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+    .comparison-row:nth-child(odd) {
+      background: #1a3a6b;
+    }
+    .comparison-label {
+      flex: 1;
+      color: #fff;
+      font-weight: 600;
+    }
+    .comparison-value {
+      flex: 1;
+      color: #ddd;
+    }
+    .comparison-value.highlight {
+      color: #ff7b00;
+    }
+    .cta-section {
+      background: linear-gradient(135deg, #ff7b00, #e56e00);
+      padding: 80px 50px;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .btn-cta {
+      background: #0b1d39;
+      color: #fff;
+      padding: 15px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+    .btn-cta:hover {
+      background: #142d56;
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .service-hero h1 { font-size: 2.2rem; }
+      .service-hero p { font-size: 1.1rem; }
+      .service-content { padding: 60px 20px; }
+      .comparison-row { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="assets/logoedit.svg" alt="Top End Panels Logo" /></a>
+      <h1>Top End Panels</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="smash-repairs.html">Services</a></li>
+        <li><a href="dent-repairs.html" class="active">Dent Repairs</a></li>
+        <li><a href="about1.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="quote.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="quote.html" class="btn-quote">Get a Quote</a>
+  </nav>
+
+  <section class="service-hero">
+    <div class="service-hero-content">
+      <h1>Dent Repairs</h1>
+      <p>From car park dings to hail damage, our dent repair specialists restore your vehicle's body to a flawless finish. Using both traditional techniques and modern paintless dent repair methods, we offer solutions for every type of dent damage.</p>
+    </div>
+  </section>
+
+  <section class="service-content">
+    <div class="service-grid">
+      <div class="service-feature">
+        <h3>Paintless Dent Repair (PDR)</h3>
+        <p>Remove dents without touching your original paintwork using specialised tools and techniques. Ideal for car park dings, hail damage, and minor collisions.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Traditional Dent Repair</h3>
+        <p>For dents that can't be repaired with PDR, we use filler, sanding, and repainting techniques to achieve a seamless, invisible repair.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Hail Damage Repair</h3>
+        <p>Specialised PDR techniques to remove hail dents efficiently, preserving your vehicle's original paint and value.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Door Ding Repair</h3>
+        <p>Quick and effective removal of door dings and minor dents caused by shopping carts, mall doors, and other everyday incidents.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Panel Alignment</h3>
+        <p>Precision panel realignment to correct misaligned panels that create gaps or affect how doors and hoods close.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Scratch & Chip Repair</h3>
+        <p>Expert touch-up and repair of scratches, stone chips, and paint imperfections to restore your car's finish.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pdr-section">
+    <h2>Paintless Dent Repair Benefits</h2>
+    <div class="pdr-grid">
+      <div class="pdr-item">
+        <h4>No Repainting</h4>
+        <p>Preserves original factory paint finish</p>
+      </div>
+      <div class="pdr-item">
+        <h4>Fast Turnaround</h4>
+        <p>Most repairs completed in hours, not days</p>
+      </div>
+      <div class="pdr-item">
+        <h4>Cost Effective</h4>
+        <p>Lower cost than traditional body repairs</p>
+      </div>
+      <div class="pdr-item">
+        <h4>Value Retained</h4>
+        <p>Maintains your vehicle's resale value</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="comparison-section">
+    <h2>PDR vs Traditional Repair</h2>
+    <div class="comparison-table">
+      <div class="comparison-row">
+        <div class="comparison-label">Paint Preservation</div>
+        <div class="comparison-value highlight">100% with PDR</div>
+      </div>
+      <div class="comparison-row">
+        <div class="comparison-label">Traditional Repair</div>
+        <div class="comparison-value">Requires repainting</div>
+      </div>
+      <div class="comparison-row">
+        <div class="comparison-label">Turnaround Time</div>
+        <div class="comparison-value highlight">Hours (PDR) vs Days</div>
+      </div>
+      <div class="comparison-row">
+        <div class="comparison-label">Cost</div>
+        <div class="comparison-value highlight">30-50% less (PDR)</div>
+      </div>
+      <div class="comparison-row">
+        <div class="comparison-label">Resale Value</div>
+        <div class="comparison-value highlight">Better with original paint</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Have Dents or Dings?</h2>
+    <p>Bring your vehicle in for a free dent assessment. We'll recommend the best repair solution for your needs.</p>
+    <a href="quote.html" class="btn-cta">Book Assessment</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Top End Panels | All Rights Reserved</p>
+  </footer>
+</body>
+</html>

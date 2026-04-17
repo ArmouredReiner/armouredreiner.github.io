@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smash Repairs | Top End Panels</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .service-hero {
+      background: linear-gradient(135deg, #0b1d39 0%, #142d56 100%);
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+      position: relative;
+    }
+    .service-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("assets/car.avif") center/cover no-repeat;
+      opacity: 0.15;
+    }
+    .service-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .service-hero h1 {
+      font-size: 3rem;
+      color: #ff7b00;
+      margin-bottom: 20px;
+    }
+    .service-hero p {
+      font-size: 1.3rem;
+      color: #ccc;
+      line-height: 1.8;
+    }
+    .service-content {
+      background: #0f2a4b;
+      padding: 80px 50px;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-feature {
+      background: #142d56;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+    }
+    .service-feature h3 {
+      color: #ff7b00;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+    .service-feature p {
+      color: #ddd;
+      line-height: 1.7;
+    }
+    .process-section {
+      background: #0b1d39;
+      padding: 80px 50px;
+      text-align: center;
+    }
+    .process-section h2 {
+      font-size: 2.2rem;
+      color: #ff7b00;
+      margin-bottom: 50px;
+    }
+    .process-steps {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .process-step {
+      background: #142d56;
+      border-radius: 12px;
+      padding: 25px 30px;
+      width: 200px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .step-number {
+      background: #ff7b00;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin: 0 auto 15px;
+    }
+    .process-step h4 {
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .process-step p {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    .cta-section {
+      background: linear-gradient(135deg, #ff7b00, #e56e00);
+      padding: 80px 50px;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .btn-cta {
+      background: #0b1d39;
+      color: #fff;
+      padding: 15px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+    .btn-cta:hover {
+      background: #142d56;
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .service-hero h1 { font-size: 2.2rem; }
+      .service-hero p { font-size: 1.1rem; }
+      .service-content { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="assets/logoedit.svg" alt="Top End Panels Logo" /></a>
+      <h1>Top End Panels</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="smash-repairs.html" class="active">Services</a></li>
+        <li><a href="about1.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="quote.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="quote.html" class="btn-quote">Get a Quote</a>
+  </nav>
+
+  <section class="service-hero">
+    <div class="service-hero-content">
+      <h1>Smash Repairs</h1>
+      <p>From minor collisions to major structural damage, our expert team restores your vehicle to its original condition with factory-level precision. We handle everything from bumper damage to full chassis repairs, ensuring your safety and your car's value are never compromised.</p>
+    </div>
+  </section>
+
+  <section class="service-content">
+    <div class="service-grid">
+      <div class="service-feature">
+        <h3>Collision Assessment</h3>
+        <p>Our certified assessors provide thorough damage evaluations, working directly with insurance companies to streamline your claim process and minimize downtime.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Structural Repairs</h3>
+        <p>Using computerised measuring systems and frame alignment technology, we restore your vehicle's structural integrity to manufacturer specifications.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Bumper & Body Repairs</h3>
+        <p>We repair or replace damaged bumpers, fenders, doors, and panels using quality parts that match your vehicle's original specifications.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Paint Matching</h3>
+        <p>Our advanced colour-matching technology ensures seamless paint repairs using premium automotive paints for a flawless, factory-quality finish.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Quality Guarantee</h3>
+        <p>All repairs come with a workmanship guarantee, giving you peace of mind that your vehicle is in expert hands from start to finish.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Cстояcar Provision</h3>
+        <p>We arrange quality courtesy vehicles during repairs so you can stay mobile while we restore your car to its best condition.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <h2>Our Repair Process</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h4>Assessment</h4>
+        <p>Free damage evaluation and quote</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h4>Insurance</h4>
+        <p>We handle your claim paperwork</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h4>Repair</h4>
+        <p>Expert technicians restore your car</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <h4>Quality Check</h4>
+        <p>Rigorous inspection before delivery</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Need Smash Repairs?</h2>
+    <p>Contact us today for a free assessment and quote. We're here to help get you back on the road.</p>
+    <a href="quote.html" class="btn-cta">Get Your Free Quote</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Top End Panels | All Rights Reserved</p>
+  </footer>
+</body>
+</html>

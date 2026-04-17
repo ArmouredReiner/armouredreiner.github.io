@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spray Painting | Top End Panels</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .service-hero {
+      background: linear-gradient(135deg, #0b1d39 0%, #142d56 100%);
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+      position: relative;
+    }
+    .service-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("assets/car.avif") center/cover no-repeat;
+      opacity: 0.15;
+    }
+    .service-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .service-hero h1 {
+      font-size: 3rem;
+      color: #ff7b00;
+      margin-bottom: 20px;
+    }
+    .service-hero p {
+      font-size: 1.3rem;
+      color: #ccc;
+      line-height: 1.8;
+    }
+    .service-content {
+      background: #0f2a4b;
+      padding: 80px 50px;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-feature {
+      background: #142d56;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+    }
+    .service-feature h3 {
+      color: #ff7b00;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+    .service-feature p {
+      color: #ddd;
+      line-height: 1.7;
+    }
+    .paint-process {
+      background: #0b1d39;
+      padding: 80px 50px;
+    }
+    .paint-process h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #ff7b00;
+      margin-bottom: 50px;
+    }
+    .process-timeline {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 25px;
+      margin-bottom: 30px;
+      align-items: flex-start;
+    }
+    .timeline-number {
+      background: #ff7b00;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .timeline-content h4 {
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .timeline-content p {
+      color: #aaa;
+    }
+    .color-selection {
+      background: #0f2a4b;
+      padding: 60px 50px;
+      text-align: center;
+    }
+    .color-selection h2 {
+      font-size: 2rem;
+      color: #ff7b00;
+      margin-bottom: 20px;
+    }
+    .color-selection p {
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    .color-options {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .color-swatch {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      border: 3px solid #fff;
+    }
+    .cta-section {
+      background: linear-gradient(135deg, #ff7b00, #e56e00);
+      padding: 80px 50px;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .btn-cta {
+      background: #0b1d39;
+      color: #fff;
+      padding: 15px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+    .btn-cta:hover {
+      background: #142d56;
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .service-hero h1 { font-size: 2.2rem; }
+      .service-hero p { font-size: 1.1rem; }
+      .service-content { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="assets/logoedit.svg" alt="Top End Panels Logo" /></a>
+      <h1>Top End Panels</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="smash-repairs.html">Services</a></li>
+        <li><a href="spray-painting.html" class="active">Spray Painting</a></li>
+        <li><a href="about1.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="quote.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="quote.html" class="btn-quote">Get a Quote</a>
+  </nav>
+
+  <section class="service-hero">
+    <div class="service-hero-content">
+      <h1>Spray Painting</h1>
+      <p>Our state-of-the-art spray painting facility delivers factory-quality finishes that perfectly match your vehicle's original colour. Using premium automotive paints and professional equipment, we restore your car's appearance to showroom condition.</p>
+    </div>
+  </section>
+
+  <section class="service-content">
+    <div class="service-grid">
+      <div class="service-feature">
+        <h3>Colour Matching</h3>
+        <p>Advanced computerised colour matching technology analyses your vehicle's paint code and existing colour to create a perfect match every time.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Full Panel Repaints</h3>
+        <p>Complete resprays for individual panels or entire vehicle sections, preparing surfaces meticulously for a flawless, long-lasting finish.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Partial Repaints</h3>
+        <p>Targeted painting for specific areas affected by damage or wear, blending seamlessly with existing paintwork.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Clear Coat Application</h3>
+        <p>Premium clear coat application for enhanced protection and a deep, glossy shine that lasts.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Custom Colours</h3>
+        <p>Want to personalise your vehicle? We offer custom colour matching for unique paint jobs.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Primer & Preparation</h3>
+        <p>Thorough surface preparation including priming, sanding, and sealing for optimal paint adhesion and finish quality.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="paint-process">
+    <h2>Our Spray Painting Process</h2>
+    <div class="process-timeline">
+      <div class="timeline-item">
+        <div class="timeline-number">1</div>
+        <div class="timeline-content">
+          <h4>Surface Preparation</h4>
+          <p>Thorough cleaning, sanding, and priming of the surface</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-number">2</div>
+        <div class="timeline-content">
+          <h4>Colour Matching</h4>
+          <p>Computer analysis to find the perfect colour formula</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-number">3</div>
+        <div class="timeline-content">
+          <h4>Spray Application</h4>
+          <p>Multiple coats applied in a controlled spray booth environment</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-number">4</div>
+        <div class="timeline-content">
+          <h4>Clear Coat & Curing</h4>
+          <p>Protective clear coat application and proper curing</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-number">5</div>
+        <div class="timeline-content">
+          <h4>Polish & Inspect</h4>
+          <p>Final polish and rigorous quality inspection</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="color-selection">
+    <h2>Premium Paint Brands</h2>
+    <p>We use only the highest quality automotive paints from leading manufacturers to ensure durability and a perfect finish.</p>
+    <div class="color-options">
+      <div class="color-swatch" style="background: #1a5f7a;"></div>
+      <div class="color-swatch" style="background: #2d2d2d;"></div>
+      <div class="color-swatch" style="background: #c0392b;"></div>
+      <div class="color-swatch" style="background: #f1f1f1;"></div>
+      <div class="color-swatch" style="background: #e67e22;"></div>
+      <div class="color-swatch" style="background: #27ae60;"></div>
+      <div class="color-swatch" style="background: #8e44ad;"></div>
+      <div class="color-swatch" style="background: #f39c12;"></div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Need Spray Painting?</h2>
+    <p>Get a flawless factory-quality finish for your vehicle. Contact us for a quote today.</p>
+    <a href="quote.html" class="btn-cta">Get Your Free Quote</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Top End Panels | All Rights Reserved</p>
+  </footer>
+</body>
+</html>

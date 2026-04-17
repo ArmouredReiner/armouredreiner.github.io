@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Beating | Top End Panels</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .service-hero {
+      background: linear-gradient(135deg, #0b1d39 0%, #142d56 100%);
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+      position: relative;
+    }
+    .service-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("assets/car.avif") center/cover no-repeat;
+      opacity: 0.15;
+    }
+    .service-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .service-hero h1 {
+      font-size: 3rem;
+      color: #ff7b00;
+      margin-bottom: 20px;
+    }
+    .service-hero p {
+      font-size: 1.3rem;
+      color: #ccc;
+      line-height: 1.8;
+    }
+    .service-content {
+      background: #0f2a4b;
+      padding: 80px 50px;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-feature {
+      background: #142d56;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+    }
+    .service-feature h3 {
+      color: #ff7b00;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+    .service-feature p {
+      color: #ddd;
+      line-height: 1.7;
+    }
+    .techniques-section {
+      background: #0b1d39;
+      padding: 80px 50px;
+    }
+    .techniques-section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #ff7b00;
+      margin-bottom: 50px;
+    }
+    .technique-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .technique-item {
+      background: #142d56;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+    }
+    .technique-item h4 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .technique-item p {
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+    .cta-section {
+      background: linear-gradient(135deg, #ff7b00, #e56e00);
+      padding: 80px 50px;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .btn-cta {
+      background: #0b1d39;
+      color: #fff;
+      padding: 15px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+    .btn-cta:hover {
+      background: #142d56;
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .service-hero h1 { font-size: 2.2rem; }
+      .service-hero p { font-size: 1.1rem; }
+      .service-content { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="assets/logoedit.svg" alt="Top End Panels Logo" /></a>
+      <h1>Top End Panels</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="smash-repairs.html">Services</a></li>
+        <li><a href="panel-beating.html" class="active">Panel Beating</a></li>
+        <li><a href="about1.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="quote.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="quote.html" class="btn-quote">Get a Quote</a>
+  </nav>
+
+  <section class="service-hero">
+    <div class="service-hero-content">
+      <h1>Panel Beating</h1>
+      <p>Our master panel beaters use traditional craftsmanship combined with modern technology to repair panels, align frames, and restore your vehicle to its original shape. From subtle dings to complex deformations, we have the expertise to make your car look brand new again.</p>
+    </div>
+  </section>
+
+  <section class="service-content">
+    <div class="service-grid">
+      <div class="service-feature">
+        <h3>Frame Alignment</h3>
+        <p>Using computerised chassis alignment systems, we ensure your vehicle's frame is precisely aligned to factory specifications for optimal safety and handling.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Panel Removal & Installation</h3>
+        <p>Careful removal, repair, and reinstallation of doors, hoods, trunks, and fenders using proper techniques to preserve panel integrity and fit.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Metal Work</h3>
+        <p>Expert metal shaping and welding using industry-standard techniques and equipment to repair rust damage, tears, and structural metal components.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Hail Damage Repair</h3>
+        <p>Specialised paintless dent repair techniques to remove hail damage without affecting your vehicle's original paint finish.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Plastic Panel Repair</h3>
+        <p>Repair of modern plastic bumper covers and trim pieces using professional-grade materials and techniques for invisible repairs.</p>
+      </div>
+      <div class="service-feature">
+        <h3>Quality Finish</h3>
+        <p>Every panel is meticulously prepared for painting with proper priming, sanding, and sealing to ensure a flawless final result.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="techniques-section">
+    <h2>Our Panel Beating Techniques</h2>
+    <div class="technique-grid">
+      <div class="technique-item">
+        <h4>Paintless Dent Repair</h4>
+        <p>Remove dents without repainting using specialised tools</p>
+      </div>
+      <div class="technique-item">
+        <h4>Spot Welding</h4>
+        <p>Factory-quality welds for structural integrity</p>
+      </div>
+      <div class="technique-item">
+        <h4>Panel Hammering</h4>
+        <p>Traditional craftsmanship for smooth panel surfaces</p>
+      </div>
+      <div class="technique-item">
+        <h4>Filler Application</h4>
+        <p>Premium body fillers for seamless repairs</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Need Panel Beating Services?</h2>
+    <p>Our skilled panel beaters are ready to restore your vehicle. Contact us for a free assessment.</p>
+    <a href="quote.html" class="btn-cta">Get Your Free Quote</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Top End Panels | All Rights Reserved</p>
+  </footer>
+</body>
+</html>

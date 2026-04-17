@@ -118,7 +118,7 @@
     .btn-secondary:hover { background:#ff7b00; color:#fff; }
 
     /* Learn More text */
-    .service-description {
+    .service-description-removed {
       max-height: 0;
       overflow: hidden;
       opacity: 0;
@@ -128,7 +128,7 @@
       color: #ddd;
       font-size: 0.95rem;
     }
-    .service-card.active .service-description {
+    .service-card.active .service-description-removed {
       max-height: 200px;
       opacity: 1;
       margin-top: 10px;
@@ -248,11 +248,13 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <a href="about1.html">About</a>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <a href="quote.html">Contact</a></li>
+        <li><a href="smash-repairs.html">Smash Repairs</a></li>
+        <li><a href="panel-beating.html">Panel Beating</a></li>
+        <li><a href="dent-repairs.html">Dent Repairs</a></li>
+        <li><a href="about1.html">About</a></li>
+        <li><a href="quote.html">Contact</a></li>
       </ul>
     </nav>
     <a href="quote.html" class="btn-quote">Get a Quote</a>
@@ -402,27 +404,28 @@
     <div class="service-grid">
       <div class="service-card">
         <img src="assets/damaged.png" alt="Accident Repair" />
-        <h3>Accident Repair</h3>
-        <a href="#" class="btn-secondary learn-more">Learn More</a>
-        <div class="service-description">
-          <p>Our accident repair service covers everything from minor collisions to major structural damage. We restore your car’s integrity and finish with factory-level precision.</p>
-        </div>
+        <h3>Smash Repairs</h3>
+        <a href="smash-repairs.html" class="btn-secondary">Learn More</a>
       </div>
       <div class="service-card">
-        <img src="assets/panelbeating.webp" alt="Car Panel Beating" />
+        <img src="assets/panelbeating.webp" alt="Panel Beating" />
         <h3>Panel Beating</h3>
-        <a href="#" class="btn-secondary learn-more">Learn More</a>
-        <div class="service-description">
-          <p>Our expert panel beaters use advanced techniques to repair panels, align frames, and bring your car back to its original shape safely and accurately.</p>
-        </div>
+        <a href="panel-beating.html" class="btn-secondary">Learn More</a>
       </div>
       <div class="service-card">
-        <img src="assets/dent.png" alt="Scratch & Dent Repair" />
-        <h3>Scratch & Dent Repair</h3>
-        <a href="#" class="btn-secondary learn-more">Learn More</a>
-        <div class="service-description">
-          <p>We specialize in precision scratch and dent repairs using paint-matching technology to make your car’s surface look as good as new.</p>
-        </div>
+        <img src="assets/dent.png" alt="Spray Painting" />
+        <h3>Spray Painting</h3>
+        <a href="spray-painting.html" class="btn-secondary">Learn More</a>
+      </div>
+      <div class="service-card">
+        <img src="assets/fixed.png" alt="Insurance Repairs" />
+        <h3>Insurance Repairs</h3>
+        <a href="insurance-repairs.html" class="btn-secondary">Learn More</a>
+      </div>
+      <div class="service-card">
+        <img src="assets/dent.png" alt="Dent Repairs" />
+        <h3>Dent Repairs</h3>
+        <a href="dent-repairs.html" class="btn-secondary">Learn More</a>
       </div>
     </div>
   </section>
@@ -681,43 +684,116 @@ sliders.forEach(slider => {
     </div>
   </section>
 
-    <!-- GOOGLE REVIEWS SECTION -->
-<!-- GOOGLE REVIEWS SECTION -->
-<section class="reviews" id="reviews">
-  <link rel="stylesheet" href="style.css" />
-  <h2>What Our Customers Say</h2>
-  <p>Real feedback from our valued customers.</p>
+  <!-- LOCATION & REVIEWS -->
+  <section class="location-reviews">
+    <div class="location-map">
+      <h2>Find Us</h2>
+      <p>Visit our workshop in Sunshine, Melbourne</p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.83753532!2d144.8317801!3d-37.796643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad66086019eff9f%3A0xfcfaafa00cbd7214!2sTop%20End%20Panels!5e0!3m2!1sen!2sau!4v1700000000000!5m2!1sen!2sau"
+          width="100%"
+          height="350"
+          style="border:0; border-radius: 12px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="location-info">
+        <p><strong>Top End Panels</strong></p>
+        <p>Sunshine, Melbourne VIC</p>
+        <a href="https://www.google.com/maps/place/Top+End+Panels/@-37.796643,144.8317801,17z" target="_blank" class="btn-secondary">Get Directions</a>
+      </div>
+    </div>
+    <div class="reviews-panel">
+      <h2>What Our Customers Say</h2>
+      <p>Real feedback from our valued customers.</p>
+      <div class="google-reviews">
+        <a href="https://share.google/pCCcCnLFzp1kTitX1" target="_blank" class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"The team at Top End Panels are truly amazing. From handling insurance to providing a courtesy car, they took care of everything. The quality of work was flawless—highly recommend!"</p>
+          <p class="reviewer">– Jessica Tan</p>
+        </a>
+        <a href="https://share.google/PeQqO7jBZKmcCekXG" target="_blank" class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Can't recommend the team enough! They helped me deal with my insurance and got my car looking brand new again. True professionals!"</p>
+          <p class="reviewer">– Lakeisha Jong</p>
+        </a>
+      </div>
+      <a href="https://www.google.com/maps/place/Top+End+Panels/@-37.796643,144.8317801,17z" target="_blank" class="btn-main">View All Google Reviews</a>
+    </div>
+  </section>
 
-  <div class="google-reviews">
-    <!-- Review 1 -->
-    <a href="https://share.google/pCCcCnLFzp1kTitX1" target="_blank" class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>"The team at Top End Panels are truly amazing. From handling insurance to providing a courtesy car, they took care of everything. The quality of work was flawless—I almost didn’t recognise my car when it was ready. Highly recommend!"</p>
-      <p class="reviewer">– Jessica Tan</p>
-    </a>
+  <style>
+  .location-reviews {
+    background: #0f2a4b;
+    padding: 80px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+  }
+  .location-map {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+  }
+  .location-map h2 {
+    font-size: 2rem;
+    color: #ff7b00;
+    margin-bottom: 10px;
+  }
+  .location-map p {
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+  .map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+  .location-info {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .location-info p {
+    color: #fff;
+    margin-bottom: 5px;
+  }
+  .reviews-panel {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: center;
+  }
+  .reviews-panel h2 {
+    font-size: 2rem;
+    color: #ff7b00;
+    margin-bottom: 10px;
+  }
+  .reviews-panel > p {
+    color: #ccc;
+    margin-bottom: 30px;
+  }
+  .reviews-panel .google-reviews {
+    text-align: left;
+  }
+  .reviews-panel .btn-main {
+    margin-top: 20px;
+  }
+  @media (max-width: 900px) {
+    .location-reviews {
+      flex-direction: column;
+      align-items: center;
+    }
+    .location-map, .reviews-panel {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  </style>
 
-    <!-- Review 2 -->
-    <a href="https://share.google/PeQqO7jBZKmcCekXG" target="_blank" class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>"Can’t recommend the team enough! This is my second time coming to Top End Panels and the work has been amazing. They even helped me deal with my insurance and got my car looking brand new again. True professionals!"</p>
-      <p class="reviewer">– Lakeisha Jong</p>
-    </a>
-
-    <!-- Review 3 -->
-    <a href="https://share.google/V7F8l9sPF6hj5EdsN" target="_blank" class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>"One of the best body panel shops in Sunshine. I’m very satisfied with their quality and experience. Jaden is knowledgeable and helped me through the whole claim process."</p>
-      <p class="reviewer">– Ye Minko</p>
-    </a>
-
-
-  <a 
-    href="https://www.google.com/maps/place/Top+End+Panels/@-37.796643,144.8317801,17z/data=!4m8!3m7!1s0x6ad66086019eff9f:0xfcfaafa00cbd7214!8m2!3d-37.796643!4d144.834355!9m1!1b1!16s%2Fg%2F1tfh4t3n?hl=en-AU&entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D" 
-    target="_blank" 
-    class="btn-main">
-    View All Google Reviews
-  </a>
-</section>
 
 
  <footer>
