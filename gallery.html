@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Top End Panels</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-hero {
+      background: linear-gradient(135deg, #0b1d39 0%, #142d56 100%);
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+    }
+    .gallery-hero h1 {
+      font-size: 3rem;
+      color: #ff7b00;
+      margin-bottom: 20px;
+    }
+    .gallery-hero p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 600px;
+    }
+    .gallery-section {
+      background: #0f2a4b;
+      padding: 80px 50px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .gallery-item .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover .overlay {
+      transform: translateY(0);
+    }
+    .gallery-item h3 {
+      color: #ff7b00;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+    .gallery-item p {
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    .category-tab {
+      background: #142d56;
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .category-tab:hover, .category-tab.active {
+      background: #ff7b00;
+      transform: translateY(-2px);
+    }
+    .cta-section {
+      background: linear-gradient(135deg, #ff7b00, #e56e00);
+      padding: 80px 50px;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .btn-cta {
+      background: #0b1d39;
+      color: #fff;
+      padding: 15px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+    .btn-cta:hover {
+      background: #142d56;
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .gallery-hero h1 { font-size: 2.2rem; }
+      .gallery-section { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="assets/logoedit.svg" alt="Top End Panels Logo" /></a>
+      <h1>Top End Panels</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="smash-repairs.html">Services</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="about1.html">About</a></li>
+        <li><a href="quote.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="quote.html" class="btn-quote">Get a Quote</a>
+  </nav>
+
+  <section class="gallery-hero">
+    <div>
+      <h1>Our Work</h1>
+      <p>Browse through our portfolio of completed repairs and restoration work. Every vehicle we touch leaves our workshop looking better than new.</p>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="assets/gallery1.jpg" alt="Workshop Interior" />
+        <div class="overlay">
+          <h3>Our Workshop</h3>
+          <p>State-of-the-art repair facility</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/gallery2.jpg" alt="Spray Painting" />
+        <div class="overlay">
+          <h3>Spray Painting</h3>
+          <p>Factory-quality paint finishes</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/gallery3.jpg" alt="Dent Repair" />
+        <div class="overlay">
+          <h3>Dent Repair</h3>
+          <p>Precision dent removal</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/gallery4.jpg" alt="Frame Alignment" />
+        <div class="overlay">
+          <h3>Frame Alignment</h3>
+          <p>Computerised chassis straightening</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/damaged.png" alt="Before Repair" />
+        <div class="overlay">
+          <h3>Collision Damage</h3>
+          <p>Expert collision repairs</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/repaired.png" alt="After Repair" />
+        <div class="overlay">
+          <h3>Restored Vehicle</h3>
+          <p>Flawless final result</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to See Your Car Restored?</h2>
+    <p>Contact us today for a free assessment and quote. We'd love to help bring your vehicle back to its best.</p>
+    <a href="quote.html" class="btn-cta">Get Your Free Quote</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Top End Panels | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
